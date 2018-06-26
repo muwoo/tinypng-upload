@@ -1,6 +1,8 @@
 # tinypng-upload
 
-> compress image by tinypng adn upload to server
+![image](https://user-images.githubusercontent.com/21073039/41907915-e42591a0-7974-11e8-8c44-cd912f02a096.png)
+
+
 
 #### Build Setup
 
