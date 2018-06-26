@@ -7,7 +7,7 @@
       </MenuItem>
       <MenuItem name="2">
         <Icon type="settings"></Icon>
-        压缩设置
+        参数设置
       </MenuItem>
     </Menu>
     <router-view class="view"></router-view>
