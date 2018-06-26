@@ -8,9 +8,9 @@ Size comparison before and after compression
 
 <img width="400" alt="83652a0b-1a75-4642-bcc1-cbe7911a4a1f" src="https://user-images.githubusercontent.com/21073039/41909762-70d26786-797a-11e8-8e47-bbbce7bbc349.png">
 
-## Usage
+# Usage
 
-#### 1. Download 
+### 1. Download 
 First, clone this project and run locally：
 ```bash
 git clone 
@@ -20,7 +20,7 @@ npm run build
 ```
 After that, you will be able to find an executable program in the build folder. And then run it.
 
-#### 2. Configuring tinypng API key 
+### 2. Configuring tinypng API key 
 `tinypng-upload`use tinypng API to compress image,So you need to register an `API Key` in [tinypng](https://tinypng.com/).
 
 
@@ -31,7 +31,7 @@ Then add this API key to settings:
 <img width="600" src="https://user-images.githubusercontent.com/21073039/41910806-5be0a33a-797d-11e8-8de9-24b42c21fa85.png">
 
 
-#### 3. Configuring upload request
+### 3. Configuring upload request
 If you need to upload pictures to the server, you must configure these options.
 
 |Property|Decription|Type|Default|
