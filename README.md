@@ -2,6 +2,11 @@
 
 ![image](https://user-images.githubusercontent.com/21073039/41909201-02c933c4-7979-11e8-9c69-5e78f88f4ab3.gif)
 
+![image](https://user-images.githubusercontent.com/21073039/41909498-bb50812c-7979-11e8-82a6-aba99e0eaa3b.gif)
+
+压缩前后对比
+
+![]()
 
 #### Build Setup
 
