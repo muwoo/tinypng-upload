@@ -1,6 +1,8 @@
 'use strict'
 
 import { app, BrowserWindow } from 'electron'
+import utils from './utils'
+import {winURL} from './utils/constant'
 
 /**
  * Set `__static` path to static files in production
@@ -11,28 +13,39 @@ if (process.env.NODE_ENV !== 'development') {
 }
 
 let mainWindow
-const winURL = process.env.NODE_ENV === 'development'
-  ? `http://localhost:9080`
-  : `file://${__dirname}/index.html`
+let isQuitting = false
 
 function createWindow () {
-  /**
-   * Initial window options
-   */
-  mainWindow = new BrowserWindow({
-    height: 563,
-    useContentSize: true,
-    width: 1000
+  mainWindow = new BrowserWindow(utils.config)
+  mainWindow.loadURL(winURL)
+  mainWindow.on('closed', () => {
+    mainWindow = null
   })
 
-  mainWindow.loadURL(winURL)
+  mainWindow.on('close', e => {
+    if (!isQuitting) {
+      e.preventDefault()
+      if (process.platform === 'darwin') {
+        app.hide()
+      } else {
+        mainWindow.hide()
+      }
+    }
+  })
 
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
+  })
 }
 
-app.on('ready', createWindow)
+app.on('ready', () => {
+  createWindow()
+  utils.createTray(mainWindow)
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -46,22 +59,6 @@ app.on('activate', () => {
   }
 })
 
-/**
- * Auto Updater
- *
- * Uncomment the following code below and install `electron-updater` to
- * support auto updating. Code Signing with a valid certificate is required.
- * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
- */
-
-/*
-import { autoUpdater } from 'electron-updater'
-
-autoUpdater.on('update-downloaded', () => {
-  autoUpdater.quitAndInstall()
+app.on('before-quit', () => {
+  isQuitting = true
 })
-
-app.on('ready', () => {
-  if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
-})
- */
