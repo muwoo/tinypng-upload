@@ -1,31 +1,43 @@
-# tinypng-upload
+<h1 align=center>tinypng-upload</h1>
 
 ![image](https://user-images.githubusercontent.com/21073039/41909201-02c933c4-7979-11e8-9c69-5e78f88f4ab3.gif)
 
 ![image](https://user-images.githubusercontent.com/21073039/41909498-bb50812c-7979-11e8-82a6-aba99e0eaa3b.gif)
 
-压缩前后对比
+Size comparison before and after compression
 
-![]()
+<img width="400" alt="83652a0b-1a75-4642-bcc1-cbe7911a4a1f" src="https://user-images.githubusercontent.com/21073039/41909762-70d26786-797a-11e8-8e47-bbbce7bbc349.png">
 
-#### Build Setup
+## Usage
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:9080
-npm run dev
-
-# build electron application for production
+#### 1. download
+First, clone this project and run locally：
+```bash
+git clone 
+cd tinypng-upload
+npm i
 npm run build
-
-
-# lint all JS/Vue component files in `src/`
-npm run lint
-
 ```
+After that, you will be able to find an executable program in the build folder. And then run it.
 
----
+#### 2. Configuring tinypng API key 
+`tinypng-upload`use tinypng API to compress image,So you need to register an `API Key` in [tinypng](https://tinypng.com/).
 
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[4c6ee7b](https://github.com/SimulatedGREG/electron-vue/tree/4c6ee7bf4f9b4aa647a22ec1c1ca29c2e59c3645) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+![](http://img.souche.com/f2e/3c2825b28b8e2c37f0c36b3b8ed16746.png)
+
+Then add this API key to settings:
+
+![](https://user-images.githubusercontent.com/21073039/41910806-5be0a33a-797d-11e8-8de9-24b42c21fa85.png)
+
+#### 3. Configuring upload request
+If you need to upload pictures to the server, you must configure these options.
+
+|Property|Decription|Type|Default|
+|---|---|---|---|
+|action|Upload request URL, required.	| String|-|
+|headers|Upload request header.	|Object|{}|
+|data|Extra data with upload request.|Object|{}|
+|name|The key in upload request targeting to the file.|String|file|
+|with-credentials|Enable certification info in Cookie or not.|Boolean|false|
+
+
