@@ -1,6 +1,6 @@
 # tinypng-upload
 
-![image](https://user-images.githubusercontent.com/21073039/41907915-e42591a0-7974-11e8-8c44-cd912f02a096.png)
+![image](http://img.souche.com/f2e/e35545dbd9216a3c2d62cd0266d9eca4.gif)
 
 
 
