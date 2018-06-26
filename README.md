@@ -23,11 +23,13 @@ After that, you will be able to find an executable program in the build folder. 
 #### 2. Configuring tinypng API key 
 `tinypng-upload`use tinypng API to compress image,So you need to register an `API Key` in [tinypng](https://tinypng.com/).
 
-![](http://img.souche.com/f2e/3c2825b28b8e2c37f0c36b3b8ed16746.png)
+
+<img width="600" src="http://img.souche.com/f2e/3c2825b28b8e2c37f0c36b3b8ed16746.png">
 
 Then add this API key to settings:
 
-![](https://user-images.githubusercontent.com/21073039/41910806-5be0a33a-797d-11e8-8de9-24b42c21fa85.png)
+<img width="600" src="https://user-images.githubusercontent.com/21073039/41910806-5be0a33a-797d-11e8-8de9-24b42c21fa85.png">
+
 
 #### 3. Configuring upload request
 If you need to upload pictures to the server, you must configure these options.
