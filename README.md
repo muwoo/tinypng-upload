@@ -1,7 +1,6 @@
 # tinypng-upload
 
-![image](http://img.souche.com/f2e/e35545dbd9216a3c2d62cd0266d9eca4.gif)
-
+![image](https://user-images.githubusercontent.com/21073039/41909201-02c933c4-7979-11e8-9c69-5e78f88f4ab3.gif)
 
 
 #### Build Setup
