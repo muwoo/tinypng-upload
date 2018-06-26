@@ -15,7 +15,6 @@
         <div style="padding: 20px 0">
           <Icon type="ios-cloud-upload" size="80" style="color: #3399ff"></Icon>
           <p>点击或拖拽上传</p>
-          <div slot="tip">1231231</div>
         </div>
       </Upload>
     </div>
@@ -56,7 +55,8 @@
           ipcRenderer.on('upload', async (event, file) => {
             let originFile = file.file
             if (file.compress) {
-              originFile = await this.operate.getCompressFile(file.path)
+              let fileObj = await this.operate.getCompressFile(file.path)
+              originFile = fileObj.compressFile
             }
             let res = await this.operate.upload(originFile)
             this.success(res.data)
@@ -69,15 +69,17 @@
       }
     },
     methods: {
-      async handleUpload (file) {
+      handleUpload (file) {
         if (!isCompress) {
           return true
         }
-        // let originFile = await this.operate.getCompressFile(file.path)
-        file = await this.operate.getCompressFile(file.path)
-        // let res = await this.operate.upload(originFile)
-        // this.success(res.data)
-        return true
+        (async () => {
+          let fileObj = await this.operate.getCompressFile(file.path)
+          let originFile = fileObj.compressFile
+          let res = await this.operate.upload(originFile)
+          this.success(res.data)
+        })()
+        return false
       },
       success (res) {
         let successInfo = new Notification('upload success', {

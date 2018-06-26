@@ -8,15 +8,17 @@ function createTray (window) {
   let appIcon = new Tray(path.join(__static, './upload-t.png'))
 
   appIcon.on('drop-files', async function (e, files) {
-    let fileBuffer = fs.readFileSync(files[0])
-    let options = {
-      file: fileBuffer,
-      path: files[0],
-      compress,
-      originSize: parseInt(fileBuffer.length / 1024),
-      targetSize: 0
+    for (let path of files) {
+      let fileBuffer = fs.readFileSync(path)
+      let options = {
+        file: fileBuffer,
+        path: path,
+        compress,
+        originSize: parseInt(fileBuffer.length / 1024),
+        targetSize: 0
+      }
+      window.webContents.send('upload', options)
     }
-    window.webContents.send('upload', options)
   })
 
   let contextMenu = Menu.buildFromTemplate([

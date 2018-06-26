@@ -1,6 +1,6 @@
 {
   "name": "tinypng-upload",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "muwoo <muwoo.cn@gmail.com>",
   "description": "compress image by tinypng and upload to server",
   "license": null,

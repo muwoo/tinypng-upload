@@ -10,7 +10,6 @@ import axios from 'axios'
 class Operate {
   constructor (options) {
     this.options = options
-    this.distSize = 0
   }
 
   getCompressFile (path) {
@@ -34,15 +33,10 @@ class Operate {
             body: 'A network connection error occurred.'
           })
         } else {
-          this.distSize = parseInt(resultData.length / 1024)
-          resolve(resultData)
+          resolve({compressFile: resultData, distSize: parseInt(resultData.length / 1024)})
         }
       })
     })
-  }
-
-  getDistSize () {
-    return this.distSize
   }
 
   async upload (file) {
