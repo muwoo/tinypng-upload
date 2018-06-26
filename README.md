@@ -1,4 +1,4 @@
-<h1 align=center>tinypng-upload</h1>
+# tinypng upload
 
 ![image](https://user-images.githubusercontent.com/21073039/41909201-02c933c4-7979-11e8-9c69-5e78f88f4ab3.gif)
 
@@ -10,7 +10,7 @@ Size comparison before and after compression
 
 ## Usage
 
-#### 1. download
+#### 1. Download 
 First, clone this project and run locally：
 ```bash
 git clone 
