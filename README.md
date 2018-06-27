@@ -23,8 +23,7 @@ After that, you will be able to find an executable program in the build folder. 
 ### 2. Configuring tinypng API key 
 `tinypng-upload`use tinypng API to compress image,So you need to register an `API Key` in [tinypng](https://tinypng.com/).
 
-
-<img width="600" src="http://img.souche.com/f2e/3c2825b28b8e2c37f0c36b3b8ed16746.png">
+<img width="600" src="https://user-images.githubusercontent.com/21073039/41950896-fa103d36-79fa-11e8-939f-c2a76117d5ab.png">
 
 Then add this API key to settings:
 
